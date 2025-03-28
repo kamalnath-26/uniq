@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form{
+            margin-left: 200px;
+            margin-top: 100px;
+        }
+        td{
+            padding: 30px;
+        }
+        </style>
+</head>
+<body>
+    <form action="{% url 'store' %}" method="POST" autocomplete="off">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>PRODUCT NAME</td>
+                <td><input type="text" name="pn"></td>
+            </tr>
+            
+            <tr>
+                <td>PRODUCT CODE</td>
+                <td><input type="text" name="pc"></td>
+            </tr>
+            
+            <tr>
+                <td>PRICE</td>
+                <td><input type="text" name="p"></td>
+            </tr>
+            
+            <tr>
+                <td>GST</td>
+                <td><input type="text" name="g"></td>
+            </tr>
+            
+            <tr>
+                <td>FOOD PRODUCT</td>
+                <td><input type="text" name="f"></td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    form{
+        margin-left: 200px;
+        margin-top: 100px;
+    }
+    td{
+        padding: 30px;
+    }
+    </style>
+</head>
+<body>
+    {% for i in z %}
+    <form action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>PRODUCT NAME</td>
+                <td><input type="text" name="pn" value="{{i.PRODUCT_NAME}}"></td>
+            </tr>
+            
+            <tr>
+                <td>PRODUCT CODE</td>
+                <td><input type="text" name="pc" value="{{i.PRODUCT_CODE}}"></td>
+            </tr>
+            
+            <tr>
+                <td>PRICE</td>
+                <td><input type="text" name="p" value="{{i.PRICE}}"></td>
+            </tr>
+            
+            <tr>
+                <td>GST</td>
+                <td><input type="text" name="g" value="{{i.GST}}"></td>
+            </tr>
+            
+            <tr>
+                <td>FOOD PRODUCT</td>
+                <td><input type="text" name="f" value="{{i.FOODPRODECT}}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+    {% endfor %}
+</body>
+</html>
